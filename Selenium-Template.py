@@ -3,6 +3,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 import chromedriver_autoinstaller
 from pyvirtualdisplay import Display
+import tempfile
 
 
 chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
@@ -10,14 +11,14 @@ chromedriver_autoinstaller.install()  # Check if the current version of chromedr
                                       # then add chromedriver to path
 
 
-
+temp_dir = tempfile.mkdtemp()
 chrome_options = webdriver.ChromeOptions() # Add your options as needed    
 options = [
   # Define window size here
    
  
     "--headless",
-    "--user-data-dir=/tmp/chrome_user_data",
+    "--user-data-dir={temp_dir}",
     #"--disable-gpu",
     #"--window-size=1920,1200",
     #"--ignore-certificate-errors",
