@@ -17,6 +17,7 @@ options = [
    
  
     "--headless",
+    "--user-data-dir=/tmp/chrome_user_data",
     #"--disable-gpu",
     #"--window-size=1920,1200",
     #"--ignore-certificate-errors",
