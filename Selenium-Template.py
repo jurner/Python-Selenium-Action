@@ -14,18 +14,12 @@ chromedriver_autoinstaller.install()  # Check if the current version of chromedr
 temp_dir = tempfile.mkdtemp()
 chrome_options = webdriver.ChromeOptions() # Add your options as needed    
 options = [
-  # Define window size here
-   
- 
     "--headless",
-    "--user-data-dir={temp_dir}",
-    #"--disable-gpu",
-    #"--window-size=1920,1200",
-    #"--ignore-certificate-errors",
-    #"--disable-extensions",
-    #"--no-sandbox",
-    #"--disable-dev-shm-usage",
-    #'--remote-debugging-port=9222'
+    f"--user-data-dir={temp_dir}",
+    "--disable-gpu",
+    "--window-size=1920,1200",
+    "--no-sandbox",
+    "--disable-dev-shm-usage"
 ]
 
 for option in options:
