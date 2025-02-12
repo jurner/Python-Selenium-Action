@@ -1,0 +1,11 @@
+selenium
+chromedriver-autoinstaller
+pyvirtualdisplay
+urllib3<2.0.0
+jupyter
+notebook
+ipykernel
+pandas
+xlrd
+openpyxl 
+python-dotenv

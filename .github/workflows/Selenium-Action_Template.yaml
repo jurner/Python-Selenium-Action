@@ -18,11 +18,16 @@ jobs:
         
        # Need to fetch reqs if needed
       - name: Installing all necessary packages
-        run: pip install chromedriver-autoinstaller selenium pyvirtualdisplay
+        run: |
+          pip install chromedriver-autoinstaller selenium pyvirtualdisplay
+          pip install xlrd pandas numpy  # Added required packages for Excel processing
       - name: Install xvfb
         run: sudo apt-get install xvfb
 
       - name: Running the Python script
+        env:
+          ABANINJA_USERNAME: ${{ secrets.ABANINJA_USERNAME }}
+          ABANINJA_PASSWORD: ${{ secrets.ABANINJA_PASSWORD }}
         run: python Selenium-Template.py
         
       - name: Commit and Push The Results From Python Selenium Action
